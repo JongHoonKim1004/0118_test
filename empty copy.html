@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #total {width:500px; height:200px; border:1px solid #d8d8d8;}
+    </style>
+</head>
+<body>
+    
+    
+    
+
+    <script>
+        var fullprice = 0;
+
+        var Item = function(name,value,price){
+            this.name = name;
+            this.value = value;
+            this.price = price;
+            fullprice += price;
+
+            var price2 = (this.price*parseInt(this.value)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            document.write(this.name+" "+this.value+" "+price2+"입니다.<br>");
+            
+        }
+
+        Item("사과","2kg",15000);
+        Item("빵","4개",1300);
+        Item("아이스크림","9개",1600);
+
+    </script>
+    <br><br>
+
+    <div id="total"></div>
+
+    <script>
+        console.log(fullprice);
+        fullprice2 = fullprice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById("total").innerHTML = "김영희 님이 구매하신 물건의 총 가격은<br>"+fullprice2+"<br>원 입니다."
+    </script>
+</body>
+</html>
