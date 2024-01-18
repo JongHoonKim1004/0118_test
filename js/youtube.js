@@ -1,7 +1,7 @@
 /* 예스튜브 영역 함수 */
 $(function(){
     $.ajax({
-        url: "json/youtube.json",
+        url: "./json/youtube.json",
         dataType: "json",
         success: function(data){
             if(data.length > 0){
